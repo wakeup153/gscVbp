@@ -37,33 +37,32 @@ module.exports = {
       when: 'isNotTest',
       type: 'string',
       required: true,
-      message: 'Project name',
+      message: '项目名称',
     },
     description: {
       when: 'isNotTest',
       type: 'string',
       required: false,
-      message: 'Project description',
-      default: 'A Vue.js project',
+      message: '项目描述',
+      default: '基本Vue的前端项目',
     },
     author: {
       when: 'isNotTest',
       type: 'string',
-      message: 'Author',
+      message: '作者',
     },
     build: {
       when: 'isNotTest',
       type: 'list',
-      message: 'Vue build',
+      message: 'Vue 构建',
       choices: [
         {
-          name: 'Runtime + Compiler: recommended for most users',
+          name: '运行时 + 编译器: 推荐给大多数用户',
           value: 'standalone',
           short: 'standalone',
         },
         {
-          name:
-            'Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere',
+          name:'仅运行时: 约6KB min + gzip, 但只允许在模板 (或任何Vue特定的 HTML)中. Vue文件需要在其他地方渲染',
           value: 'runtime',
           short: 'runtime',
         },
@@ -72,17 +71,17 @@ module.exports = {
     router: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Install vue-router?',
+      message: '是否安装路由(vue-router)?',
     },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Use ESLint to lint your code?',
+      message: '是否使用ESLint检查代码?',
     },
     lintConfig: {
       when: 'isNotTest && lint',
       type: 'list',
-      message: 'Pick an ESLint preset',
+      message: '选择ESLint规范',
       choices: [
         {
           name: 'Standard (https://github.com/standard/standard)',
@@ -104,12 +103,12 @@ module.exports = {
     unit: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Set up unit tests',
+      message: '设置单元测试',
     },
     runner: {
       when: 'isNotTest && unit',
       type: 'list',
-      message: 'Pick a test runner',
+      message: '选择测试工具',
       choices: [
         {
           name: 'Jest',
@@ -131,31 +130,8 @@ module.exports = {
     e2e: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?',
-    },
-    autoInstall: {
-      when: 'isNotTest',
-      type: 'list',
-      message:
-        'Should we run `npm install` for you after the project has been created? (recommended)',
-      choices: [
-        {
-          name: 'Yes, use NPM',
-          value: 'npm',
-          short: 'npm',
-        },
-        {
-          name: 'Yes, use Yarn',
-          value: 'yarn',
-          short: 'yarn',
-        },
-        {
-          name: 'No, I will handle that myself',
-          value: false,
-          short: 'no',
-        },
-      ],
-    },
+      message: '是否使用Nightwatch进行e2e测试?',
+    }
   },
   filters: {
     '.eslintrc.js': 'lint',
