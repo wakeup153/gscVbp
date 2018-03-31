@@ -84,12 +84,12 @@ module.exports = {
       message: '选择ESLint规范',
       choices: [
         {
-          name: 'Standard (https://github.com/standard/standard)',
+          name: 'Standard',
           value: 'standard',
           short: 'Standard',
         },
         {
-          name: 'Airbnb (https://github.com/airbnb/javascript)',
+          name: 'Airbnb',
           value: 'airbnb',
           short: 'Airbnb',
         },
